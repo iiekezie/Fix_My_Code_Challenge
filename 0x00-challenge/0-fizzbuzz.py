@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-""" FizzBuzz
-"""
 import sys
+
 
 def fizzbuzz(n):
     if n < 1:
@@ -20,15 +19,12 @@ def fizzbuzz(n):
     print(" ".join(tmp_result))
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
+if __name__ == '__main__':
+    if len(sys.argv) <= 1:
+        print("Missing number")
         print("Usage: ./0-fizzbuzz.py <number>")
-        sys.exit(1)
-    
-    try:
-        number = int(sys.argv[1])
-    except ValueError:
-        print("The argument should be an integer")
+        print("Example: ./0-fizzbuzz.py 89")
         sys.exit(1)
 
+    number = int(sys.argv[1])
     fizzbuzz(number)
